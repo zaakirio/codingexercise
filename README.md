@@ -14,6 +14,10 @@ A RESTful web service for managing packages of products, built with Java and Spr
 
 ## Getting Started
 
+### Build the project
+```bash
+./mvnw clean install
+```
 
 ### Run the application
 ```bash
