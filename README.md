@@ -63,3 +63,20 @@ curl -X DELETE http://localhost:8080/packages/{id}
 - **Service**: Business logic, price calculation, currency conversion.
 - **Repository**: Data access (H2 in-memory database).
 - **Gateway**: Integration with external APIs (Product Service, Frankfurter API).
+
+## Configuration
+The application uses standard Spring Boot configuration. Default credentials are in `src/main/resources/application.properties`.
+
+For production, **do not edit the file**. Instead, override the values using Environment Variables:
+
+| Property | Environment Variable | Description |
+|----------|----------------------|-------------|
+| `product.service.username` | `PRODUCT_SERVICE_USERNAME` | Username for Product Service |
+| `product.service.password` | `PRODUCT_SERVICE_PASSWORD` | Password for Product Service |
+
+### Example: Running with Custom Credentials
+```bash
+export PRODUCT_SERVICE_USERNAME=myuser
+export PRODUCT_SERVICE_PASSWORD=mypass
+./mvnw spring-boot:run
+```
